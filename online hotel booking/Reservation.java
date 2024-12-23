@@ -1,16 +1,17 @@
 import java.util.Date;
+import java.util.List;
 
 public class Reservation {
     private int reservationId;
-    private int roomId;
+    private List<Integer> roomIds; // List of room IDs
     private int guestId;
     private Date checkIn;
     private Date checkOut;
     private String paymentStatus;
 
-    public Reservation(int reservationId, int roomId, int guestId, Date checkIn, Date checkOut, String paymentStatus) {
+    public Reservation(int reservationId, List<Integer> roomIds, int guestId, Date checkIn, Date checkOut, String paymentStatus) {
         this.reservationId = reservationId;
-        this.roomId = roomId;
+        this.roomIds = roomIds;
         this.guestId = guestId;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
@@ -21,8 +22,8 @@ public class Reservation {
         return reservationId;
     }
 
-    public int getRoomId() {
-        return roomId;
+    public List<Integer> getRoomIds() {
+        return roomIds;
     }
 
     public int getGuestId() {
@@ -43,5 +44,10 @@ public class Reservation {
 
     public void setPaymentStatus(String paymentStatus) {
         this.paymentStatus = paymentStatus;
+    }
+
+    @Override
+    public String toString() {
+        return "Reservation ID: " + reservationId + ", Rooms: " + roomIds + ", Guest ID: " + guestId + ", Check-In: " + checkIn + ", Check-Out: " + checkOut + ", Payment Status: " + paymentStatus;
     }
 }
