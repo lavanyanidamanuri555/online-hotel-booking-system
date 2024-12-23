@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Reservation {
     private int reservationId;
-    private List<Integer> roomIds; // List of room IDs
+    private List<Integer> roomIds; 
     private int guestId;
     private Date checkIn;
     private Date checkOut;
